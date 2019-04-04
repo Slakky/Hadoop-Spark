@@ -9,3 +9,6 @@ There are two files: `_SUCCESS` and `part-r-0000`. The first file is a file gene
 2. In this example we used Hadoop in Local (Standalone) Mode. What is the difference
 between this mode and the Pseudo-distributed mode?
 
+The standalone mode is supposed to work by itself as a single Java program on the machine. It uses the machine FileSystem. 
+
+The pseudo-distributed mode uses Hadoop as a daemon on the machine and it uses several nodes to work, simulating a pseudo-cluster. There may be different Hadoop daemons working at different VM but on a single machine. It uses Hadoop's File System (HDFS).
