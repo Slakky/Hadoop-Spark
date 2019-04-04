@@ -1,5 +1,7 @@
 # This is the A1 lab report
 
+#Task 1.1
+
 Answer the following questions:
 1. Look at the contents of the folder â`output`â - what are the files place in there? What do
 they mean?
@@ -12,3 +14,14 @@ between this mode and the Pseudo-distributed mode?
 The standalone mode is supposed to work by itself as a single Java program on the machine. It uses the machine FileSystem. 
 
 The pseudo-distributed mode uses Hadoop as a daemon on the machine and it uses several nodes to work, simulating a pseudo-cluster. There may be different Hadoop daemons working at different VM but on a single machine. It uses Hadoop's File System (HDFS).
+
+## Task 1.2
+
+Answer the following questions:
+1. What are the roles of the files core-site.xml and hdfs-site.xml ?
+
+
+2. Describe briefly the roles of the different services listed when executing ‘jps’.
+
+
+## Task 1.3
