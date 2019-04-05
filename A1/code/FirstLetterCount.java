@@ -21,6 +21,7 @@ public class WordCount {
                 token = token.toUpperCase();
                 //Get first character
                 char firstChar = token.charAt(0);
+                string s=Character.toString(firstChar);
                 word.set(firstChar);
                 output.collect(word, one);
             }
