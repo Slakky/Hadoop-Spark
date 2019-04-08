@@ -20,6 +20,7 @@ public class WordCount {
                 // Convert to upper case, to it's not case sensitive
                 token = token.toUpperCase();
                 //Get first character
+                //Strin firstChar = token.subtring(0,1)
                 char firstChar = token.charAt(0);
                 String s=Character.toString(firstChar);
                 word.set(s);
