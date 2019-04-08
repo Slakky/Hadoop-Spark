@@ -25,3 +25,12 @@ Answer the following questions:
 
 
 ## Task 1.3
+
+Answer the following questions:
+
+1. Explain the roles of the different classes in the file WordCount.java
+2. What is HDFS, and how is it different from the local filesystem on your VM?
+
+## Task 1.4
+
+
