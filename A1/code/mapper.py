@@ -23,7 +23,11 @@ tuits = [json.loads(element)
          for element in sys.stdin
          if not element == "\n"]
 
+
 filtered_tuits = filter_retweets(tuits)
+
+with open('unique_tuits.tmp', 'w') as f:
+    f.write('{}'.format(len(filtered_tuits)))
 
 unique_tuits = len(filtered_tuits)
 
