@@ -27,10 +27,17 @@ Answer the following questions:
 ## Task 1.3
 
 Answer the following questions:
+<<<<<<< HEAD
+1. Explain the roles of the different classes in the file WordCount.java.
+
+2. What is HDFS, and how is it different from the local filesystem on your virtual
+machine?
+=======
 
 1. Explain the roles of the different classes in the file WordCount.java
 2. What is HDFS, and how is it different from the local filesystem on your VM?
 
 ## Task 1.4
 
+>>>>>>> c787f3b80f3fddf462fe525d3990825345f09cb6
 
