@@ -7,7 +7,7 @@ import org.apache.hadoop.io.*;
 import org.apache.hadoop.mapred.*;
 import org.apache.hadoop.util.*;
 
-public class WordCount {
+public class FirstLetterCount {
     public static class Map extends MapReduceBase implements Mapper<LongWritable, Text, Text, IntWritable> {
         private final static IntWritable one = new IntWritable(1);
         private Text word = new Text();
@@ -20,6 +20,7 @@ public class WordCount {
                 // Convert to upper case, to it's not case sensitive
                 token = token.toUpperCase();
                 //Get first character
+                //Strin firstChar = token.subtring(0,1)
                 char firstChar = token.charAt(0);
                 String s=Character.toString(firstChar);
                 word.set(s);
