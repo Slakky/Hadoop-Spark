@@ -1,22 +1,28 @@
+
+""" mapper.py """
+
 import json
 import sys
 
+pronouns = ('han', 'hon', 'den', 'det', 'denna', 'hen')
 
-#[f(x) if condition else g(x) for x in sequence]
-#[pair for pair in enumerate(mylist)]
-#[f(x) for x in sequence if condition]
 
-tuits = [(counter,line)\
-	for counter,line in enumerate(sys.stdin)\
-        if not line == "\n"]
+def filter_retweets(tuits):
+    return [tuit for tuit in tuits
+            if 'retweeted_status' not in tuit]
 
-for i in range(len(tuits)):
-    tuit = json.loads(tuits[i][1])
-    print(tuit)
-#for counter, line in enumerate(sys.stdin.strip()):
-#    print(counter, line)
-#    if not line == "\n":
-#        tuits = json.loads(line)
-#    else:
-#        pass
-#print(counter)
+
+def mapper(tuits):
+    return print('\n'.join('{}\t{}'.format(word, 1)
+                           for tuit in tuits
+                           for word in tuit['text'].split()
+                           if word in pronouns))
+
+
+tuits = [json.loads(element)
+         for element in sys.stdin
+         if not element == "\n"]
+
+filtered_tuits = filter_retweets(tuits)
+
+mapper(filtered_tuits)
