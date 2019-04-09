@@ -13,7 +13,7 @@ def filter_retweets(tuits):
 
 
 def mapper(tuits):
-    return print('\n'.join('{}\t{}'.format(word, 1)
+    return print('\n'.join('{},{}'.format(word, 1)
                            for tuit in tuits
                            for word in tuit['text'].split()
                            if word in pronouns))
@@ -24,5 +24,7 @@ tuits = [json.loads(element)
          if not element == "\n"]
 
 filtered_tuits = filter_retweets(tuits)
+
+unique_tuits = len(filtered_tuits)
 
 mapper(filtered_tuits)
