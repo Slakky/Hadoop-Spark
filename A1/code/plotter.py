@@ -20,6 +20,7 @@ tuits = [json.loads(element)
          if not element == "\n"]
 
 unique_tuits = len(filter_retweets(tuits))
+print(unique_tuits)
 # filepath = sys.argv[1]
 # tuits = [json.loads(element)
 #          for element in sys.stdin
