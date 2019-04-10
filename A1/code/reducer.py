@@ -11,8 +11,11 @@ pronoun = None
 
 for line in sys.stdin:
     line = line.strip()
-    pronoun, count = line.split(',')
-    count = int(count)
+    pronoun, count = line.split(',',1)
+    try:
+        count = int(count)
+    except ValueError:
+        continue
     if current_pronoun == pronoun:
         current_count += count
     else:
