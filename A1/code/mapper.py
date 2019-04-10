@@ -5,7 +5,7 @@
 import json
 import sys
 
-pronouns = ('han', 'hon', 'den', 'det', 'denna', 'hen')
+pronouns = ('han', 'hon', 'den', 'det', 'denna', 'hen', 'denne')
 
 
 def filter_retweets(tuits):
@@ -17,7 +17,7 @@ def mapper(tuits):
     return print('\n'.join('{},{}'.format(word, 1)
                            for tuit in tuits
                            for word in tuit['text'].split()
-                           if word in pronouns))
+                           if word.lower() in pronouns))
 
 
 tuits = [json.loads(element)
