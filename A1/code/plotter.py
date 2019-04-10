@@ -9,36 +9,23 @@ import json
 x = []
 y = []
 
+filepath = sys.argv[1]
+if not os.path.isfile(filepath):
+    print("File path {} does not exist. Exiting ...".format(filepath))
+    sys.exit()
+with open(filepath) as file:
+    for line in file:
+        line = line.strip()
+        pronoun, freq = line.split(",")
+        x.append(pronoun)
+        y.append(int(freq))
 
-def filter_retweets(tuits):
-    return [tuit for tuit in tuits
-            if 'retweeted_status' not in tuit]
+unique_tuits = y[-1]
+normalized_frequencies = [x / unique_tuits for x in y[1:] ]
 
-
-tuits = [json.loads(element)
-         for element in sys.stdin
-         if not element == "\n"]
-
-unique_tuits = len(filter_retweets(tuits))
-print(unique_tuits)
-# filepath = sys.argv[1]
-# tuits = [json.loads(element)
-#          for element in sys.stdin
-#          if not element == "\n"]
-# unique_tuits = len(filter_retweets(tuits))
-# if not os.path.isfile(filepath):
-#     print("File path {} does not exist. Exiting ...".format(filepath))
-#     sys.exit()
-# with open(filepath) as file:
-#     for line in file:
-#         line = line.strip()
-#         pronoun, freq = line.split(",")
-#         x.append(pronoun)
-#         y.append(int(freq) / int(unique_tuits))
-# plt.bar(x, y, align='center')
-# plt.xticks(x)
-# plt.ylabel('Counts')
-# plt.xlabel('Pronouns')
-# plt.title('Pronoun count normalized Task 2')
-# plt.savefig('pronounstuits.png')
-# os.remove('unique_tuits.tmp')
+plt.bar(x[1:], normalized_frequencies, align='center')
+plt.xticks(x[1:])
+plt.ylabel('Counts')
+plt.xlabel('Pronouns')
+plt.title('Pronoun count normalized Task 2')
+plt.savefig('pronounstuits.png')
