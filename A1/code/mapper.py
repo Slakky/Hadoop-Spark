@@ -19,8 +19,7 @@ def mapper(tuits):
     return print('\n'.join('{},{}'.format(word.lower(), 1)
                            for tuit in tuits
                            for word in tuit['text'].split()
-                           if word.lower().translate(str.maketrans('','', string.punctuation))
-                            in pronouns))
+                           if word.lower() in pronouns))
 
 tuits = [json.loads(element)
          for element in sys.stdin
