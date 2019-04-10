@@ -4,18 +4,27 @@
 import matplotlib.pyplot as plt
 import sys
 import os
+import json
 
 x = []
 y = []
 
 
+def filter_retweets(tuits):
+    return [tuit for tuit in tuits
+            if 'retweeted_status' not in tuit]
+
+
 def main():
     filepath = sys.argv[1]
+    tuits = [json.loads(element)
+             for element in sys.stdin
+             if not element == "\n"]
+    unique_tuits = len(filter_retweets(tuits))
     if not os.path.isfile(filepath):
         print("File path {} does not exist. Exiting ...".format(filepath))
         sys.exit()
-    with open(filepath) as file, open('unique_tuits.tmp', 'r') as tuits:
-        unique_tuits = ''.join(line.split(None, 1)[0] for line in tuits)
+    with open(filepath) as file:
         for line in file:
             line = line.strip()
             pronoun, freq = line.split(",")
