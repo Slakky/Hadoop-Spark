@@ -14,7 +14,7 @@ def filter_retweets(tuits):
 
 
 def mapper(tuits):
-    return print('\n'.join('{},{}'.format(word, 1)
+    return print('\n'.join('{},{}'.format(word.lower(), 1)
                            for tuit in tuits
                            for word in tuit['text'].split()
                            if word.lower() in pronouns))
