@@ -14,13 +14,16 @@ def filter_retweets(tuits):
             if 'retweeted_status' not in tuit]
 
 
+def clean_word(word):
+    return word.lower().translate(str.maketrans("", "", string.punctuation))
+
 
 def mapper(tuits):
-    return print('\n'.join('{},{}'.format(word.lower().translate(str.maketrans("","",string.punctuation)), 1)
+    return print('\n'.join('{},{}'.format(clean_word(word), 1)
                            for tuit in tuits
                            for word in tuit['text'].split()
-                           if word.lower().translate(str.maketrans("","",string.punctuation))
-                            in pronouns))
+                           if clean(word) in pronouns))
+
 
 tuits = [json.loads(element)
          for element in sys.stdin
