@@ -22,9 +22,11 @@ public class FirstLetterCount {
                 //Get first character
                 //Strin firstChar = token.subtring(0,1)
                 char firstChar = token.charAt(0);
-                String s=Character.toString(firstChar);
-                word.set(s);
-                output.collect(word, one);
+                if (Character.isletter(firstChar)){
+                    String s=Character.toString(firstChar);
+                    word.set(s);
+                    output.collect(word, one);
+                }
             }
         }
     }

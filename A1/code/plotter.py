@@ -21,11 +21,11 @@ with open(filepath) as file:
         y.append(int(freq))
 
 unique_tuits = y[-1]
-normalized_frequencies = [x / unique_tuits for x in y[1:] ]
+normalized_frequencies = [x / unique_tuits for x in y[1:]]
 
 plt.bar(x[1:], normalized_frequencies, align='center')
 plt.xticks(x[1:])
-plt.ylabel('Counts')
+plt.ylabel(' Normalized Counts')
 plt.xlabel('Pronouns')
-plt.title('Pronoun count normalized Task 2')
+plt.title('Task 2')
 plt.savefig('pronounstuits.png')
