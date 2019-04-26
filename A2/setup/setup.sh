@@ -13,3 +13,4 @@ python3 -m pip install pyspark --user
 python3 -m pip install pandas --user
 python3 -m pip install matplotlib --user
 git clone https://github.com/Slakky/LDSA.git
+jupyter notebook
