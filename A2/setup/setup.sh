@@ -9,4 +9,7 @@ sudo apt-get install -y git
 sudo apt-get install -y python3-pip
 python3 -m pip install pip
 sudo apt install -y jupyter-notebook
-
+python3 -m pip install pyspark --user
+python3 -m pip install pandas --user
+python3 -m pip install matplotlib --user
+git clone https://github.com/Slakky/LDSA.git
